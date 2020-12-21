@@ -1,0 +1,27 @@
+.mydiv1 {
+    background-color: lightcoral;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* height: 60px; */
+    align-items: center;
+    text-align: center;
+    border: 3px solid green;
+}
+
+.myh1 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.mydiv2 {   
+    border: 3px solid blue;
+    position: relative;
+    text-align: center;
+    top: 40;
+}
+
+.myh12 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

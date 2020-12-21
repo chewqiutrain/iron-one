@@ -1,0 +1,9 @@
+.mydiv2 {   
+    border: 3px solid blue;
+    position: relative;
+    top: 40;
+    bottom: 40;
+    text-align: center;
+    align-items: center;
+    /* clear: left; */
+}
