@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CrozzleClientService } from '../crozzle-client.service';
 
 @Component({
   selector: 'app-button-status',
@@ -7,28 +8,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ButtonStatusComponent implements OnInit {
   
-  response: String = "";
+  response: string = "";
 
-  Messages: String[] = [
+  Messages: string[] = [
     "yellow apple",
     "fat man",
     "orderly buttons"
   ];
 
-  
-
-
-  constructor() { }
+  constructor(private crozzle: CrozzleClientService) { }
 
   ngOnInit(): void {
+    console.log(`ButtonStatusComponent.ngOnInit()`);
+    // this.response = "";
   }
 
-  buttonPressed(): String {
+  buttonPressed2(): string {
     const randomIndex = Math.floor(Math.random() * 3);
     const randomMessage = this.Messages[randomIndex];
     console.log(`buttonPressed | randomIndex: ${randomIndex} | randomMessage: ${randomMessage}`);
     this.response = randomMessage;
     return randomMessage;
+  }
+
+  buttonPressed(): void { 
+    this.crozzle.ping()
+      .subscribe(res => {
+        console.log(`buttonPressed | res: ${res}`);
+        this.response = res;
+      }
+    )
   }
 
 
